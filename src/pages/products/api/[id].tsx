@@ -2,6 +2,8 @@ import React from "react";
 import Producto from "@models/producto";
 import { GetStaticProps } from "next";
 import styles from "@/styles/id.module.css";
+import { Card, Icon, Image } from "semantic-ui-react";
+
 export const getStaticPaths = async () => {
   const response = await fetch("https://platzi-avo.vercel.app/api/avo");
   const { data: productList } = await response.json();
@@ -31,18 +33,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const Product = ({ product }: { product: Producto }) => {
   return (
-    <div>
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <img
-            style={{ width: 200, height: 200, borderRadius: 25 }}
-            src={product.image}
-            alt="Imagen"
-          />
-          <h3 style={{marginLeft:50}}>{product.name}</h3>
-          <h2>{product.price}</h2>
-        </div>
-      </div>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Card>
+        <Image src={product.image} wrapped ui={false} />
+        <Card.Header className={styles.card}>{product.name}</Card.Header>
+        <Card.Header className={styles.cardHeader} >{product.price}</Card.Header>
+        <Card.Description className={styles.card}>{product.attributes.description}</Card.Description>
+      </Card>
     </div>
   );
 };

@@ -3,7 +3,7 @@ class Producto{
     name:string="";
     price:string="";
     image:string="";
-    attributes:{}={
+    attributes:any={
         description:"",
         shape:"",
         hardines:"",

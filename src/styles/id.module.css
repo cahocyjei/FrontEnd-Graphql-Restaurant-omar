@@ -4,13 +4,13 @@
     max-width: 25%;
 }
 .card{
-    margin: 4px;
+    margin: 10px;
 }
-.card img{
-    margin: 6px;
-    margin-left: 15%;
+.cardHeader{
+    margin: 10px;
+    font-size: 2em;
 }
 .card h2{
-    font-size: 2em;
+    
     margin-left: 15%;
 }
