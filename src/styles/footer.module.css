@@ -1,0 +1,24 @@
+.footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: darkolivegreen;
+    margin-top: 20px;
+    max-width: 100%;
+    padding: 10px 20px;
+    
+}
+.col1{
+    columns: 2px;
+    margin: 6px;
+}
+.col2{
+    columns: 4px;
+    margin: 6px;
+}
+.col3{
+    columns: 2px;
+    margin: 2px;
+}
+.col2 h2{
+    color: azure;
+}

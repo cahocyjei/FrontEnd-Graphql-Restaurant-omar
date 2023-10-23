@@ -1,0 +1,22 @@
+.table{
+    border: 1px;border:solid;border-color: blue;
+    background-color: aquamarine;
+    margin-top: 10px;
+}
+.th{
+    width: 100px;
+}
+.title{
+    width: 200px;
+}
+.description{
+    width: 800px;
+}
+.textDate{
+    text-align: center;
+}
+.imag{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}

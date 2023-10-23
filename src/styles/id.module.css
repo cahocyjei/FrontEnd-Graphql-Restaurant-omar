@@ -1,0 +1,16 @@
+.container{
+    container-type: inline-size;
+    margin-left: 25%;
+    max-width: 25%;
+}
+.card{
+    margin: 4px;
+}
+.card img{
+    margin: 6px;
+    margin-left: 15%;
+}
+.card h2{
+    font-size: 2em;
+    margin-left: 15%;
+}
