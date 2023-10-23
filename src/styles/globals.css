@@ -2,3 +2,8 @@ body{
     top: 300px;
     margin-top: 250px;
 }
+@media (max-width:360px) {
+    body{
+        margin-top: 300px;
+    }
+}

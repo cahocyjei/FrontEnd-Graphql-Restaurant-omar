@@ -5,8 +5,9 @@ import Link from 'next/link';
 
 const ListProducts = ({productList}:{productList:Producto[]}) => (
     <div>
-      <h1 style={{border:'solid:1px;',width:400,textAlign:'center',color:'green'}}>LISTA DE AVOCADOS</h1>
+      <h1 className={styles.h1}>LISTA DE AVOCADOS</h1>
       <table className={styles.table}>
+        
         <thead>
           <th className={styles.th}>Id</th>
           <th className={styles.title}>Name</th>

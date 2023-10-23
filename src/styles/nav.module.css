@@ -29,3 +29,11 @@
     text-align: center;
     font-size: 100px;
 }
+@media(max-width:360px) {
+    .nav{
+        display: block;
+    }
+    .title{
+        font-size:xx-large;
+    }
+}
