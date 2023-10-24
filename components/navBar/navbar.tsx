@@ -1,22 +1,21 @@
 import React from "react";
 import Link from "next/link";
 import styles from '@/styles/nav.module.css';
+import { Menu,Image} from 'semantic-ui-react';
 
 
 const NavBar = () => {
   return (
-    <div className={styles.nav}>
-      <div className={styles.col_1}>
+    <Menu className={styles.nav} style={{ background: 'olive', padding: '20px' }}>
         <Link href={"/"}>
-          <img className={styles.imag} src={`/images/avocados.jpg`} alt="Logo" /> 
+          <Menu.Item as='a'>
+          <Image src={`/images/avocados.jpg`} size="small" circular/> 
+          </Menu.Item>
         </Link>
-      </div>
-      <div>
-        <div className={styles.col_2}>
+        <Menu.Item>
           <h1 className={styles.title}>Avocados</h1>
-        </div>
-      </div>
-    </div>
+        </Menu.Item>
+    </Menu>
   );
 };
 

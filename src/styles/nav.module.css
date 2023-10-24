@@ -1,13 +1,10 @@
 .nav{
-    display: flex;
-    background-color: darkolivegreen;
-    justify-content: space-around;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 20px;
     z-index: 1000;
+    justify-content: space-between;
 }
 .col_1{
     columns: 4px;
@@ -17,12 +14,6 @@
     align-self: center;
     columns: 6px;
     margin: 6px;
-}
-.imag{
-    border-radius: 100px;
-    width: 200px;
-    height: 200px;
-    margin: 4px;
 }
 .title{
     color: azure;
