@@ -1,26 +1,28 @@
 import React from "react";
 import Producto from "@models/producto";
-import styles from "@/styles/products.module.css";
 import Link from "next/link";
-import { Card, Image } from "semantic-ui-react";
+import { Card, Header, Image } from "semantic-ui-react";
 
-const ListProducts = ({ productList }: { productList: Producto[] }) => (
+type ProductListProp = {
+  productList: Producto[];
+};
+
+const mapProductsToCards = (products: Producto[]) =>
+  products.map(({ name, id, price, image }) => (
+    <Card as="a" style={{ width: "400px",borderRadius:'10px' }}>
+      <Link  href={`/products/api${id}`} >
+        <Image src={image} />
+      </Link>
+      <Card.Header style={{marginLeft:'20px',marginBottom:'20px',fontSize:'large'}}>{name}</Card.Header>
+    </Card>
+  ));
+
+const ListProducts = ({ productList }: ProductListProp) => (
   <div>
-    <h1 className={styles.h1}>LISTA DE AVOCADOS</h1>
-    {productList.map((prod) => (
-      <div className="ui container" >
-        <div className="ui three cards"style={{display:"inline-block"}}>
-          <div className="card">
-            <div className="content">
-              <Link href={`/products/api/${prod.id}`}>
-                <Image src={prod.image}></Image>
-                <div className="header">{prod.name}</div>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    ))}
+    <h1 style={{textAlign:'center',color: 'darkolivegreen'}}>LISTA DE AVOCADOS</h1>
+    <Card.Group itemsPerRow={2} stackable style={{ justifyContent: "center",margin:'10px'}}>
+      {mapProductsToCards(productList)}
+    </Card.Group>
   </div>
 );
 

@@ -3,19 +3,9 @@
     margin-left: 20px;
     color: darkolivegreen;
     max-width: 300px;
+    ;
 }
-.th{
-    width: 100px;
-}
-.title{
-    width: 200px;
-}
-.description{
-    width: 800px;
-}
-.textDate{
-    text-align: center;
-}
+
 .imag{
     width: 100px;
     height: 100px;
