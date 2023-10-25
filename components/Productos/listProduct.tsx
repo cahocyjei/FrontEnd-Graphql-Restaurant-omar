@@ -10,8 +10,8 @@ type ProductListProp = {
 const mapProductsToCards = (products: Producto[]) =>
   products.map(({ name, id, price, image }) => (
     <Card as="a" style={{ width: "400px",borderRadius:'10px' }}>
-      <Link  href={`/products/api${id}`} >
-        <Image src={image} />
+      <Link  href={`products/api/${id}`} >
+        <Image src={image}/>
       </Link>
       <Card.Header style={{marginLeft:'20px',marginBottom:'20px',fontSize:'large'}}>{name}</Card.Header>
     </Card>

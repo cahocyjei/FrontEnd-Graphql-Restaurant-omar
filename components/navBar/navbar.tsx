@@ -9,7 +9,7 @@ const NavBar = () => {
     <Menu className={styles.nav} style={{ background: 'olive', padding: '20px' }}>
         <Link href={"/"}>
           <Menu.Item as='a'>
-          <Image src={`/images/avocados.jpg`} size="small" circular/> 
+          <Image src={`/images/avocados.jpg`} style={{width:150,height:150,borderRadius:'100%'}} /> 
           </Menu.Item>
         </Link>
         <Menu.Item>
