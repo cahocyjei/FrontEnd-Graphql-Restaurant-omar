@@ -6,8 +6,8 @@ import { Card, Icon, Image } from "semantic-ui-react";
 
 export const getStaticPaths = async () => {
   const response = await fetch("https://platzi-avo.vercel.app/api/avo");
-  const {data}  = await response.json();
-  const paths = data.map(({ id }:any) => ({
+  const { data } = await response.json();
+  const paths = data.map(({ id }: any) => ({
     params: {
       id,
     },
@@ -33,13 +33,29 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const Product = ({ product }: { product: Producto }) => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <Card >
-        <Image src={product.image} />
-        <Card.Header className={styles.card}>{product.name}</Card.Header>
-        <Card.Header className={styles.cardHeader} >{product.price}</Card.Header>
-        <Card.Header className={styles.card}>{product.attributes.description}</Card.Header>
-      </Card>
+    <div>
+      <Card.Group
+        itemsPerRow={2}
+        stackable
+        style={{
+          margin: "20px",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Card as="a" style={{ width: "400px" }}>
+          <Image src={product.image} />
+          <Card.Header className={styles.card}>{product.name}</Card.Header>
+          <Card.Header className={styles.cardHeader}>
+            {product.price}
+          </Card.Header>
+        </Card>
+        <Card>
+          <Card.Header className={styles.card}>
+            {product.attributes.description}
+          </Card.Header>
+        </Card>
+      </Card.Group>
     </div>
   );
 };
