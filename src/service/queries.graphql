@@ -1,0 +1,14 @@
+query {
+  userFindAll{
+    id
+    email 
+    userName 
+    password 
+    firstName
+    lastName
+    roles{
+      id
+      name
+    } 
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "@/styles/nav.module.css";
+import styles from "@styles/nav.module.css";
 import { Menu, Image } from "semantic-ui-react";
 
 const NavBar = () => {
@@ -10,7 +10,7 @@ const NavBar = () => {
       className={styles.nav}
       style={{ background: "olive", padding: "20px" }}>
       <Menu.Item as="a">
-        <Image className={styles.img} src={`/images/avocados.jpg`} />
+        <Image className={styles.img} src={`/public/images/avocados.jpg`} />
       </Menu.Item>
       <Menu.Item>
         <h1 className={styles.title}>Avocados</h1>

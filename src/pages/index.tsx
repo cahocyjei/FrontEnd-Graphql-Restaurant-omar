@@ -1,11 +1,13 @@
+import ListProducts, { ProductListProp } from "@components/Productos/listProduct";
+import Producto from "@models/producto";
 import React from "react";
-import ListProducts from "@components/Productos/listProduct";
-import Producto from "models/producto";
+
+
 //getStaticProps
 //getServerSideProps
 export const getStaticProps =  async () => {
   const response =  await fetch("https://platzi-avo.vercel.app/api/avo")
-  const {data:productList} = await response.json();
+  const productList:ProductListProp = await response.json();
   return {
     props: {
       productList
@@ -13,10 +15,10 @@ export const getStaticProps =  async () => {
   };
 };
 
-const HomePage = ({productList}:{productList:Producto[]}) => {
+const HomePage = ({ productList }:ProductListProp) => {
   return (
     <div>
-      <ListProducts productList={productList}/>
+      <ListProducts productList= { productList }/>
     </div>
   );
 };
