@@ -1,5 +1,5 @@
 import React from "react";
-import Producto from "@models/producto";
+import Producto from "../../../models/user";
 import { GetStaticProps } from "next";
 import styles from "@/styles/id.module.css";
 import { Card, Icon, Image } from "semantic-ui-react";

@@ -1,12 +1,16 @@
-import type { CodegenConfig } from '@graphql-codegen/cli'
- 
+import type { CodegenConfig } from '@graphql-codegen/cli';
+
 const config: CodegenConfig = {
-   schema: 'http://127.0.0.1:3000/graphql',
-   documents: ['service/queries.graphql'],
-   generates: {
-      'service/graphql.tsx': {
-        preset: 'client',
-      }
-   }
-}
-export default config
+  overwrite: true,
+  schema: "https://nestgraphql-restaurant-production.up.railway.app/graphql",
+  documents: "src/service/queries.graphql",
+  emitLegacyCommonJSImports: false,
+  generates: {
+    "src/service/graphql-ts/": {
+      preset: "client",
+      plugins: []
+    }
+  }
+};
+
+export default config;
