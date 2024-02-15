@@ -25,6 +25,6 @@
       "incremental": true,
       
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","src/**/*"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","src/**/*","**/*.jpg"],
     "exclude": ["node_modules"]
   }
