@@ -1,26 +1,38 @@
-import ListProducts, { ProductListProp } from "@components/Productos/listProduct";
-import Producto from "@models/producto";
-import React from "react";
+import { GetStaticProps, InferGetServerSidePropsType } from 'next'
+import ListUsers from "@components/users/listUsers";
+import { useQuery } from '@apollo/client'
+import { UserFindAllDocument, UserType } from '@service/graphql-ts/graphql';
+import { client } from '@service/client';
 
-
-//getStaticProps
-//getServerSideProps
-export const getStaticProps =  async () => {
-  const response =  await fetch("https://platzi-avo.vercel.app/api/avo")
-  const productList:ProductListProp = await response.json();
-  return {
-    props: {
-      productList
+export const getStaticProps: GetStaticProps<{ listUsers: UserType[] }> = async () => {
+  try {
+    const response = await client.query({
+      query: UserFindAllDocument
+    })
+    if (response.data.userFindAll == null) throw new Error('Faild to request')
+    const listUsers = response.data.userFindAll;
+    return {
+      props: {
+        listUsers
+      }
+    };
+  } catch (error) {
+    console.log(error)
+    return {
+      props: {
+        listUsers: []
+      }
     }
-  };
+  }
+
 };
 
-const HomePage = ({ productList }:ProductListProp) => {
+const HomePage = ({listUsers }: InferGetServerSidePropsType<typeof getStaticProps>) => {
+  const { loading, data, error } = useQuery(UserFindAllDocument);
   return (
     <div>
-      <ListProducts productList= { productList }/>
+      {data? <ListUsers listUsers={listUsers} />:<p>{ `ApolloError: Unauthorized ${error?.message}`}</p>}
     </div>
-  );
-};
-
+  )
+}
 export default HomePage;

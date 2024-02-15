@@ -1,11 +1,11 @@
 import React from "react";
-import Producto from "@models/producto";
+import Producto from "../../../models/user";
 import { GetStaticProps } from "next";
 import styles from "@/styles/id.module.css";
 import { Card, Icon, Image } from "semantic-ui-react";
 
 export const getStaticPaths = async () => {
-  const response = await fetch("https://platzi-avo.vercel.app/api/avo");
+  const response = await fetch("https://nestgraphql-restaurant-production.up.railway.app/graphql");
   const { data } = await response.json();
   const paths = data.map(({ id }: any) => ({
     params: {
@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const response = await fetch(
-    `https://platzi-avo.vercel.app/api/avo/${params?.id}`
+    `https://nestgraphql-restaurant-production.up.railway.app/graphql/${params?.id}`
   );
   const product: Producto = await response.json();
   return {

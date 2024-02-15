@@ -1,14 +1,14 @@
-query {
+query UserFindAll{
   userFindAll{
     id
-    email 
-    userName 
-    password 
+    userName
+    password
+    email
     firstName
     lastName
     roles{
-      id
-      name
-    } 
+    id
+    name
+    }
   }
 }
