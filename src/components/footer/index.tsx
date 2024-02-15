@@ -7,11 +7,11 @@ const Footer = () => {
         <div className="ui stackable inverted divided grid">
           <div className="three wide column">
             <img
-              src="/images/avocados.jpg"
+              src="/images/pizz.jpg"
               style={{ width: 100, borderRadius: 100, height: 100 }}
               alt="Avocado"
             />
-            <p>&copy; {new Date().getFullYear()} Avocados. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} JeyK. Todos los derechos reservados.</p>
           </div>
           <div className="five wide column"><p style={{fontSize:20}}>Ponte en contacto con nosotros en <a href={`mailto:cahocyjei@gmail.com`}>cahocyjei@gmail.com</a></p></div>
           <div className="four wide column">
