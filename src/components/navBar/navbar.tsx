@@ -20,7 +20,7 @@ const NavBar = () => {
           <Image className={styles.img} src="/images/pizz.jpg" alt="logo" />
         </Menu.Item>
         <Menu.Item>
-          <h1 className={styles.title} >Restaurant Pizzeria 'JeyK'</h1>
+          <h1 className={styles.title} >JeyK</h1>
         </Menu.Item>
         <Menu.Menu position="right">
           <Dropdown
