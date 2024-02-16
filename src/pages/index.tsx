@@ -1,8 +1,8 @@
 import { GetStaticProps, InferGetServerSidePropsType } from 'next'
-import ListUsers from "@components/users/listUsers";
 import { useQuery } from '@apollo/client'
 import { UserFindAllDocument, UserType } from '@service/graphql-ts/graphql';
 import { client } from '@service/client';
+import ListUsers from '@components/users/listUsers';
 
 export const getStaticProps: GetStaticProps<{ listUsers: UserType[] }> = async () => {
   try {
@@ -31,7 +31,7 @@ const HomePage = ({listUsers }: InferGetServerSidePropsType<typeof getStaticProp
   const { loading, data, error } = useQuery(UserFindAllDocument);
   return (
     <div>
-      {data? <ListUsers listUsers={listUsers} />:<p>{ `ApolloError: Unauthorized ${error?.message}`}</p>}
+      <ListUsers listUsers={listUsers}/>
     </div>
   )
 }
