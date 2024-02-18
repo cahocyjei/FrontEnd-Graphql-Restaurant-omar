@@ -1,6 +1,25 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-export const client = new ApolloClient({
+const client = new ApolloClient({
   uri:"https://nestgraphql-restaurant-develop.up.railway.app/graphql",
-  cache:new InMemoryCache()
-})
+  connectToDevTools: true,
+  cache:new InMemoryCache(
+    {
+      typePolicies: {
+        Query: {
+          fields: {
+            userFindById(_, { args, toReference }) {
+              return toReference({
+                __typename: 'UserType',
+                id: args?.id,
+              });
+            },
+          },
+        },
+      },
+    }
+  )
+}
+)
+
+export default client;

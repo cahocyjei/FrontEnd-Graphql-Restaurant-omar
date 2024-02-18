@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Image, Table } from "semantic-ui-react";
 import { UserType } from "@service/graphql-ts/graphql";
 
-const mapUsersToTable = (users: UserType[]) =>
+const mapUsersToTable = (users:UserType[]) =>
   users.map(({ id, userName, password, email, firstName, lastName, roles }) => (
     <Table.Row key={id}>
       <Table.Cell>{id}</Table.Cell>
@@ -19,9 +19,8 @@ const mapUsersToTable = (users: UserType[]) =>
         </Link>
       </Table.Cell>
     </Table.Row>
-  ));
-
-const ListUsers = ({ listUsers }: { listUsers: UserType[] }) => (
+  )) 
+const ListUsers = ({listUsers}:{listUsers:UserType[]}) => (
   <div>
     <h1 style={{ textAlign: 'center', color: 'darkolivegreen' }}>LISTA DE USUARIOS</h1>
     <Table celled>
