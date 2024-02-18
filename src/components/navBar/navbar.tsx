@@ -2,14 +2,17 @@ import React from "react";
 import Link from "next/link";
 import styles from "@styles/nav.module.css";
 import { Menu, Image, Dropdown } from "semantic-ui-react";
+import { idText } from "typescript";
+
+
 
 const NavBar = () => {
   const options = [
     { key: 'profile', text: 'Perfil', value: 'profile' },
     { key: 'loadusers', text: 'Usuarios', value: 'loadusers' },
     { key: 'registro', text: 'Registro', value: 'registro' },
-    { key: 'login', text: 'Log-Out', value: 'login' },
-    { key: 'login', text: 'Log-In', value: 'login' },
+    { key: 'logOut', text: 'Log-Out', value: 'login' },
+    { key: 'logIn', text: 'Log-In', value: 'login' },
 
   ];
 
